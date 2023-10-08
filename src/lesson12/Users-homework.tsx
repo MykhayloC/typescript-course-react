@@ -73,7 +73,8 @@ export function Users() {
       [newListOfUsersWithmoveUp[indexOfUser], newListOfUsersWithmoveUp[indexOfUser - 1]] = [newListOfUsersWithmoveUp[indexOfUser - 1], newListOfUsersWithmoveUp[indexOfUser]];
     }
     setUsers(newListOfUsersWithmoveUp);
-    console.log(usersData); // checking order of elements in the original list of users
+    console.assert(usersData !== newListOfUsersWithmoveUp); 
+    // console.assert(usersData === newListOfUsersWithmoveUp); - assertion failed
   }
 
   const handleMoveDown = (user: TUser) => {
@@ -83,7 +84,8 @@ export function Users() {
       [newListOfUsersWithmoveDown[indexOfUser], newListOfUsersWithmoveDown[indexOfUser + 1]] = [newListOfUsersWithmoveDown[indexOfUser + 1], newListOfUsersWithmoveDown[indexOfUser]];
     }
     setUsers(newListOfUsersWithmoveDown);
-    console.log(usersData); // checking order of elements in the original list of users
+    console.assert(usersData !== newListOfUsersWithmoveDown);
+    // console.assert(usersData === newListOfUsersWithmoveDown); - assertion failed
   }
   // (+)TODO: Make sure you create new list of users, do not mutate existing list
   // (+)TODO: Call setUsers with new list of users
